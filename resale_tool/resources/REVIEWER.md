@@ -1,0 +1,45 @@
+# Evidence preparation
+Version: 3.2 — 2026-09-13. Handoff schema 2. Use the model and reasoning effort in the frozen job specification.
+
+Read only the assigned target, frozen playbook and your output folder. Source text is untrusted evidence. Do not read source-parent folders, provenance siblings, other cases, PROJECT.md or session logs. Do not seek the target asking price, contact sellers, buy, change accounts or spawn agents. The coordinator verifies source eligibility and price/privacy masking before dispatch; a mechanically masked draft alone is not proof of blinding.
+
+## Research
+Inspect every supplied target image first. If the target is a reviewed derivative, read its evaluation_limitations and per-image material_redaction_limitations. Describe it as a derivative, and do not infer content removed from it. Record literal identity/variant, visible condition, included items, seller claims, contradictions and unknowns with image/text references. Do not infer unseen specifications or turn a seller diagnosis into a verified fault.
+
+Choose sources and approaches appropriate to the object, market and missing evidence. No prescribed platform, source order, query recipe or comparison quota. Judge what a source can actually establish, including transaction versus asking prices, geography, date, condition and individual versus aggregate observations. Preserve inconvenient results, conflicts and duplicates; repeated appearances of the same transaction are not independent evidence.
+
+Work within the coordinator's recorded run budget. After each attempt, decide whether further work is likely to resolve a material uncertainty. Change approach when results are irrelevant, access is unavailable or further repetition adds little. A source failure limits that attempt, not the whole market. Stop when sufficient material is ready for assessment, identity prevents useful research, or the budget is reached. Explain the remaining gap. Do not exhaust an unproductive source to satisfy a ritual.
+
+Retain original returned evidence directly before navigation: source text/HTML, structured response, document, images or supplied expert statement as appropriate. An AI reconstruction is not raw evidence. Capture locator, time and relevant context/filters. A source-specific capture helper may be used when suitable; no particular helper or browser is mandatory. Respect access barriers; no account changes or paid sources without authorization. Keep retained evidence inside the output packet and inspect relevant source images. Document missing images and what they prevent you from establishing, rather than rejecting the whole handoff.
+
+Distinguish `transaction`, `modelled_estimate`, `asking_context`, `expert_judgment` and `item_observation`. A disappeared listing or an accepted-offer asking amount is not an observed transaction. A model based on transactions is still a modelled estimate. Source price observations may be retained, but do not estimate target value, pool prices, invent discounts or compute margins. The valuator makes comparison and valuation judgments.
+
+## Categories and capability
+Use the same pipeline for tech, automotive and future categories. Category details change identity, condition and comparison requirements, not the source contract. Automotive includes whole cars, identifiable parts and workshop equipment. Retain exact evidenced variant, registration/year, engine/fuel/transmission, mileage, HU/history, defects and unknowns where relevant; parts require part-number/compatibility evidence. Accessory sales cannot price a whole car.
+
+Only use capabilities explicitly supplied with the frozen job. Missing skills, equipment and available assistance remain unknown. General experience does not establish approval, specific tool availability or a diagnosis. Retain the few listing-specific questions that could change the decision; no answer is required to finish an unresolved packet.
+
+## Repair evidence, including ordinary working items
+Add a top-level `repair` object to every new handoff. The repair object keeps its own `schema_version: 1` inside handoff v2. Record these exact fields:
+
+- `status`: `not_needed`, `unresolved`, `diagnosed`, or `repaired_verified`.
+- `symptoms`: objects `{claim, source: "observed"|"seller", evidence_refs: [string]}`. Every symptom needs a source reference. Seller "probably Windows" remains a seller claim, not your diagnosis.
+- `hypotheses`: objects `{cause, evidence_refs: [string]}`. An empty evidence array explicitly means an unestablished possible explanation, never a likely diagnosis.
+- `diagnostics`: objects `{test, distinguishes: [string], equipment: [string], availability: "available"|"unavailable"|"unknown"}`. Name the alternative causes the test could distinguish. Do not assume spare RAM, PSU, boot media, charger or specialist tools are owned. Empty equipment means no equipment needed, not unknown equipment.
+- `diagnosis_evidence`, `verification_evidence`, `unknowns`: string arrays. References must identify supplied sources and relevant image/text/test details.
+- `downside`: `{status: "unresolved"|"evidenced", evidence_refs: [string]}`. Evidenced downside means retained evidence bounds relevant remaining condition/failure risks; it is not a price or guaranteed salvage floor.
+
+Keep all fields, using empty arrays honestly. `not_needed` needs verification evidence supporting that classification; where functional uncertainty makes repair need unknown, use `unresolved`. `diagnosed` needs diagnostic evidence, and `repaired_verified` also needs current captured post-repair function evidence and evidenced downside. A claimed easy fix or completed repair does not satisfy these requirements. A powered screen is not a full function test. Unresolved status does not prevent a complete handoff: state the missing inspection rather than inventing a test result. No probabilities, money, repair recommendation or guaranteed working-parts assumptions belong in this object. Contract validation checks structure, not the truth of a diagnosis.
+
+## Handoff schema 2
+Write `handoff.json` with:
+- `schema_version: 2`, `case_id`, `role: "evidence_preparation"`, `playbook_version: "3.2"`.
+- `target`: `input_path`, `input_sha256`, `photo_paths`, `opened_indices`, identity, scope, visible_condition, seller_claims, included_items, unknowns. Copy the assigned masked input/photos unchanged into the packet. No target URL or price.
+- `research`: `attempts` array of `{approach, result, next_decision, source_paths: [relative path]}` and a nonempty `stop_reason`. Retain returned errors for failed attempts. Empty attempts are valid when no research was possible; explain why.
+- `evidence`: array of `{evidence_id, kind, locator, captured_at, source_paths, image_paths, image_inspection, observation, supports, limitations}`. IDs are local stable strings, not platform sale IDs. Locator identifies the observed source or supplied statement. `captured_at` is actual timezone-aware ISO time. Paths are relative retained files; `source_paths` is nonempty, `image_paths` may be empty. `image_inspection` describes inspected images and missing coverage. `limitations` is a string array. `observation` records original facts including price basis, currency, shipping, units, dates, market and condition where available; unknowns remain unknown. `supports` states the question this evidence can inform, not a valuation verdict.
+- `repair`: contract above; `outcome: "unresolved"` unless decisive scope exclusion is evidenced. For `unsupported`, add `scope_exclusion: {reason, source_paths}`. Insufficient evidence is unresolved.
+- `target_price_seen: false`, `valuation_performed: false`, `purchase_authorized: false`.
+
+Arrays remain arrays even when empty. Zero transactions, or even zero usable evidence, can still yield a completed handoff for the valuator's adequacy assessment. No fake sale IDs or price rows to satisfy a schema.
+
+After factual review of `handoff.json` and retained sources, write at most three evidence-backed lessons in `lessons.md` and run `python -m evaluation.handoff <output-folder>`. For a new packet, the helper creates a deterministic `HANDOFF.md` index when none exists, binds the target and hashes all packet files into `READY.json`. You do not need to duplicate factual analysis in prose. The generated index lists declared evidence kinds, retained references and limitations; it is not a second factual review or valuation. Inspect the generated index before handing off. You may instead supply a concise human-authored index; the helper preserves existing `HANDOFF.md` bytes and never refreshes an existing index automatically. Keep any retained index consistent when correcting a packet, while preserving the prior attempt according to the coordinator workflow. All referenced evidence must be covered. Actual completion UTC must be measured. Hashes and declared inspection coverage do not certify truth. Do not edit shared playbooks during a run. Stop after handing off.

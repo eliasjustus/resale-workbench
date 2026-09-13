@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resale-workbench"
+version = "0.1.0"
+description = "Resale Workbench: local review of resale evidence with explicit uncertainty"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "beautifulsoup4==4.15.0",
+  "Pillow==12.3.0",
+  "tzdata==2026.3; sys_platform == 'win32'",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/eliasjustus/resale-workbench"
+Repository = "https://github.com/eliasjustus/resale-workbench"
+Issues = "https://github.com/eliasjustus/resale-workbench/issues"
+
+[project.optional-dependencies]
+browser = ["playwright==1.62.0"]
+
+[project.scripts]
+resale = "resale_tool.cli:main"
+
+[tool.setuptools]
+packages = ["resale_tool", "collector", "evaluation", "pilot"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+resale_tool = ["resources/REVIEWER.md", "resources/VALUATOR.md"]
+evaluation = ["browser_capture.mjs"]
