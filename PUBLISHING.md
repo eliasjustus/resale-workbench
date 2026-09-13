@@ -7,7 +7,7 @@ Resale Workbench is released under the [MIT License](LICENSE) at [eliasjustus/re
 Keep operating data and historical research outside the public source tree. In a development environment with Python 3.11 or later:
 
 ```text
-python -m pip install . build setuptools wheel
+python -m pip install . build "setuptools>=77.0.3" wheel
 python tools/check_candidate.py dist/checked-0.1.0
 ```
 

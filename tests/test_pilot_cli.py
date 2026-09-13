@@ -16,7 +16,7 @@ class PilotCliTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.run = self.root / 'run'
         queue.init(self.run, state=self.root / 'state.sqlite3', start='2026-01-01T12:00:00Z')
 

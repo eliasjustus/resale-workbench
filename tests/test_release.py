@@ -12,9 +12,9 @@ class ReleaseTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name) / 'source'
+        self.root = Path(self.temp.name).resolve() / 'source'
         self.root.mkdir()
-        self.dest = Path(self.temp.name) / 'candidate'
+        self.dest = Path(self.temp.name).resolve() / 'candidate'
         (self.root / 'module.py').write_text('VALUE = 1\n', encoding='utf-8')
         self.allow(['module.py'])
 

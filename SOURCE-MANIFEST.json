@@ -10,8 +10,8 @@
     },
     {
       "path": ".github/workflows/tests.yml",
-      "bytes": 857,
-      "sha256": "ed0d7a0080718442a4dadc8e07b0e67b8f746d4c7c510bbabc870b84dd63e9ab"
+      "bytes": 867,
+      "sha256": "6ed2a54d138eff7d5c82dd7bf12087f808002d45a8ba511fbb497c99442cd884"
     },
     {
       "path": ".gitignore",
@@ -65,13 +65,13 @@
     },
     {
       "path": "PUBLISHING.md",
-      "bytes": 5112,
-      "sha256": "e802e8d9022db05d0246cb9b6febc5f72e04fedb93a174f85e1fb908c0ef5995"
+      "bytes": 5122,
+      "sha256": "d4ee2cd291286492bfd82aae76fa075ca74a19b9e9639cfeb6b46756eb138837"
     },
     {
       "path": "README.md",
-      "bytes": 13010,
-      "sha256": "b75fd583c8a4f5ec96557ff0fbb2e347a01c05eafde238c913132a18384af098"
+      "bytes": 13057,
+      "sha256": "4ca6d8eabdaf3f4d6bd73b618b1b9748c022cca6422582ed14581a8a7aa7d72d"
     },
     {
       "path": "REVIEWER.md",
@@ -320,8 +320,8 @@
     },
     {
       "path": "tests/test_configuration.py",
-      "bytes": 9156,
-      "sha256": "b861f503823d94a43ce219888c800ce103039fcf54fb2d9ade3bc1fdd3eeff0c"
+      "bytes": 9178,
+      "sha256": "47c60d4f00a9f75ce9c6782a43279c9793d66660e4c2af3c3ac73833103a65c2"
     },
     {
       "path": "tests/test_discovery.py",
@@ -375,8 +375,8 @@
     },
     {
       "path": "tests/test_pilot_cli.py",
-      "bytes": 5448,
-      "sha256": "258da9f9b38ab4ddd8fb8c0d2b05d89693adf0e8c5e48c1fc3aac09f5d2b9711"
+      "bytes": 5458,
+      "sha256": "0eda033241b92774a222f0e6149873ce0f4ab2c85218055ff945554accb2c975"
     },
     {
       "path": "tests/test_playbooks.py",
@@ -395,8 +395,8 @@
     },
     {
       "path": "tests/test_release.py",
-      "bytes": 3511,
-      "sha256": "1d3f3c4a40253effaeab5d428929ddf92883867c6831cda5e321dadb17860098"
+      "bytes": 3531,
+      "sha256": "dd8ca43502e955d4eff89b3ff82c9accaca10c38921b545586ceb006ab905a7d"
     },
     {
       "path": "tests/test_repair.py",
@@ -405,8 +405,8 @@
     },
     {
       "path": "tests/test_resale_cli.py",
-      "bytes": 5008,
-      "sha256": "566ed877ae3eebc5742891f345ab3725c798e215ed012b5acd79436e10f7d2e4"
+      "bytes": 5020,
+      "sha256": "503fc673621044c57347027e48ed6e3559608df3f74f8f61655c312b803d4341"
     },
     {
       "path": "tests/test_research_sources.py",
@@ -420,8 +420,8 @@
     },
     {
       "path": "tests/test_search_setup.py",
-      "bytes": 7687,
-      "sha256": "973928790671e83c8a2f9b4bc255c6ddbc19dfeb1edec6947aa891d8f26ca017"
+      "bytes": 7894,
+      "sha256": "94122e3a82402480ba0a1f321a3964c0153444983fef451fa9a0b3c57fcc9804"
     },
     {
       "path": "tests/test_support.py",
@@ -430,8 +430,8 @@
     },
     {
       "path": "tests/test_unified_cli.py",
-      "bytes": 7227,
-      "sha256": "a606ff439e326295029a7df6b11fa9aeb59544c4e2e338c33812f59eeb7f9ccf"
+      "bytes": 7236,
+      "sha256": "511f7c772a3fb3060e393288419aef6781c77994ed8eb3f854e4098bb71d0d44"
     },
     {
       "path": "tests/test_worker_context.py",
@@ -440,8 +440,8 @@
     },
     {
       "path": "tests/test_workflow_v2.py",
-      "bytes": 8430,
-      "sha256": "49f785753d307d26f55477b4a4c4013237754387c2cfe17e6bde2463e2f6532c"
+      "bytes": 8439,
+      "sha256": "7d073d669f21d7827faa68926bc5efc29041feb7145d5a1312064f75b86d79a5"
     },
     {
       "path": "tools/check_candidate.py",

@@ -17,10 +17,10 @@ class ConfigurationTests(ConfiguredPilotFixture, unittest.TestCase):
         config_path = self.root / 'settings.toml'
         config_path.write_text(example_config(), encoding='utf-8')
         loaded = load_config(config_path)
-        self.assertEqual(loaded['data_dir'], str(self.root / 'private-data'))
+        self.assertEqual(loaded['data_dir'], str((self.root / 'private-data').resolve()))
         self.assertIsNone(loaded['budget']['max_cases'])
         self.assertIsNone(loaded['budget']['reviewer_job_limit'])
-        self.assertEqual(q.read(self.run / 'pilot.json')['state'], str(self.root / 'user-data/pilot-state.sqlite3'))
+        self.assertEqual(q.read(self.run / 'pilot.json')['state'], str((self.root / 'user-data/pilot-state.sqlite3').resolve()))
         self.config['roles']['valuator']['model'] = 'changed-later'
         manifest = q.report(self.run)['manifest']
         self.assertEqual(manifest['configuration']['roles']['valuator']['model'], 'test-local-model')

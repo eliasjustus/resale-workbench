@@ -70,7 +70,7 @@ class WorkflowTwoTests(WorkflowTwoFixture, unittest.TestCase):
         q.select(later, ['111'], carryover=True)
         report = q.report(later)
         self.assertEqual(report['row_occurrences'], 0)
-        self.assertEqual(report['cases'][0]['carryover_from_run'], str(self.run))
+        self.assertEqual(report['cases'][0]['carryover_from_run'], str(self.run.resolve()))
         self.assertEqual(report['manifest']['window_start_inclusive'], '2026-09-12T12:00:30+00:00')
         self.assertEqual(q.backlog(self.db)['deferred'], [])
         with self.assertRaises(ValueError):

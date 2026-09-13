@@ -56,11 +56,14 @@ class SearchSetupTests(unittest.TestCase):
         for name, center, radius, category, hours in (
                 ('a', 'Hamburg', 10, 'computers', 6), ('b', 'München', 200, 'furniture', 24)):
             run = self.run_profile(name, center, radius, category, hours)
+            # Exercise a noncanonical spelling, as Windows TEMP can use short paths.
+            run = run / '..' / run.name
             url = self.prepare(run)
             self.assertEqual(self.replay(run), [url])
             q.import_discovery(run, run / 'discovery/rows.json', run / 'discovery/summary.json')
-            with q.session(run) as (_, db, _):
-                outcomes.append(dict(db.execute('SELECT listing_id,status FROM sightings WHERE run=?', (str(run),))))
+            with q.session(run) as (canonical_run, db, _):
+                outcomes.append(dict(db.execute('SELECT listing_id,status FROM sightings WHERE run=?', (str(canonical_run),))))
+            self.assertEqual(set(outcomes[-1]), {'901', '902'})
             self.assertEqual(q.select(run, ['901'])['selected'], ['901'])
         self.assertEqual(outcomes[0]['902'], 'outside_window')
         self.assertEqual(outcomes[1]['902'], 'eligible')

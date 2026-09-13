@@ -63,7 +63,7 @@ class ResaleCliTests(unittest.TestCase):
             self.assertIn('[search]', config.read_text(encoding='utf-8'))
             self.assertEqual((folder / '.gitignore').read_text(), '*\n')
             from pilot.config import load_config
-            self.assertEqual(Path(load_config(config)['data_dir']), folder / 'private-data')
+            self.assertEqual(Path(load_config(config)['data_dir']), (folder / 'private-data').resolve())
             with self.assertRaises(FileExistsError):
                 init_workspace(folder)
 
