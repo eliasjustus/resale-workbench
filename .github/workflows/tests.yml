@@ -5,6 +5,7 @@ permissions:
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.13']
@@ -16,3 +17,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install . build setuptools wheel
       - run: python tools/check_candidate.py dist/checked
+      - name: Show synthetic CI diagnostics on failure
+        if: failure()
+        shell: python
+        run: |
+          from pathlib import Path
+          for path in sorted(Path('dist/checked/verification').glob('*.log')):
+              print(path.name)
+              print(path.read_text(encoding='utf-8', errors='replace'))
