@@ -1,5 +1,13 @@
 # Resale Workbench changes
 
+## Unreleased
+
+- Add optional offline operational contracts, evidence/lineage review, fixed-cost scenarios and reviewed transaction routes without changing the existing evaluator.
+- Add atomic resource accounting, qualified readiness, authenticated local decisions and explicit reconciliation of unknown manual outcomes.
+- Add inspection/comparability, consecutive outcome cohorts, independent benchmark manifests, human pause/exit review and private documentation experiment drafts.
+- Join completed outcome follow-up to fixed actual-cost reviews; unknown acquisition/costs remain unresolved, and cash expenses, withheld fees and reserves stay distinct.
+- Extend frozen compatibility, installed-artifact and synthetic concurrency/recovery checks. Automated execution, transfer integration and the operations CLI remain incomplete.
+
 ## 0.1.0 - 2026-09-13
 
 First public release under the MIT license.

@@ -16,3 +16,11 @@ Resale Workbench is an MIT-licensed tool for collecting and reviewing evidence f
 The development workspace may also contain ignored private/, data/, runs/, research/ and historical validation/ material. Read those only when the task requires them; never add them to a release. The optional private/operator.md holds local operating context and is not needed to install or test the tool.
 
 Docs are in English; keep German platform terms where appropriate. Follow explicit current user instructions over local procedural preferences. Subagents are appropriate for independent work when requested; agree file ownership and integrate their changes before completion.
+
+The owner explicitly authorized selected public report derivatives under
+`private/research/2026-09-14/` and the `private/` researcher/index pages. Read
+`private/README.md` for their provenance and limits. They are public repository
+context, not secret storage or raw evidence, and are excluded from release inputs.
+This exception does not authorize adding other private files or publishing local
+captures, account state or operating data. For broad research orientation, start
+with `private/RESEARCHER-START.md` when available in the repository checkout.

@@ -1,0 +1,1079 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:resale-workbench:proposed-operations:1",
+  "title": "Resale Workbench proposed operational companion records (not upstream schemas)",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/source_rule"
+    },
+    {
+      "$ref": "#/$defs/evidence_event"
+    },
+    {
+      "$ref": "#/$defs/material_claim"
+    },
+    {
+      "$ref": "#/$defs/operating_review"
+    },
+    {
+      "$ref": "#/$defs/transaction_route"
+    },
+    {
+      "$ref": "#/$defs/reservation"
+    },
+    {
+      "$ref": "#/$defs/outcome_event"
+    },
+    {
+      "$ref": "#/$defs/human_decision"
+    }
+  ],
+  "$defs": {
+    "source_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "source_rule"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "source_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access_route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collection": {
+          "enum": [
+            "allowed",
+            "denied",
+            "unresolved"
+          ]
+        },
+        "retention": {
+          "enum": [
+            "allowed",
+            "denied",
+            "unresolved"
+          ]
+        },
+        "external_transfer": {
+          "enum": [
+            "allowed",
+            "denied",
+            "unresolved"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "terms_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unresolved_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "source_name",
+        "access_route",
+        "account_role",
+        "purpose",
+        "collection",
+        "retention",
+        "external_transfer",
+        "scope",
+        "basis_refs",
+        "checked_at",
+        "valid_until",
+        "terms_version",
+        "reviewer_ref",
+        "unresolved_fields"
+      ]
+    },
+    "evidence_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "evidence_event"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "transaction",
+            "asking_context",
+            "modelled_estimate",
+            "expert_judgment",
+            "observation"
+          ]
+        },
+        "transaction_state": {
+          "enum": [
+            "not_applicable",
+            "awarded",
+            "sold_reported",
+            "paid",
+            "settled",
+            "refunded",
+            "refund_adjusted",
+            "disputed",
+            "unknown"
+          ]
+        },
+        "source_rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_label_verbatim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "price_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_price_cents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "seller_country": {
+          "type": "string",
+          "minLength": 1
+        },
+        "condition_basis": {
+          "enum": [
+            "current_condition",
+            "if_repaired",
+            "parts_out",
+            "unknown"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "material_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "related_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "lineage_status": {
+          "enum": [
+            "established",
+            "unresolved"
+          ]
+        },
+        "service_bundle": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "seller_role": {
+              "type": "string",
+              "minLength": 1
+            },
+            "channel": {
+              "type": "string",
+              "minLength": 1
+            },
+            "condition_label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "return_terms_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "testing_scope_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "included_accessories": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "reputation_context_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "seller_role",
+            "channel",
+            "condition_label",
+            "return_terms_ref",
+            "testing_scope_refs",
+            "included_accessories",
+            "reputation_context_ref"
+          ]
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "evidence_id",
+        "event_id",
+        "kind",
+        "transaction_state",
+        "source_rule_id",
+        "source_label_verbatim",
+        "price_basis",
+        "item_price_cents",
+        "currency",
+        "units",
+        "seller_country",
+        "condition_basis",
+        "observed_at",
+        "event_at",
+        "material_claim_ids",
+        "related_event_ids",
+        "lineage_status",
+        "service_bundle"
+      ]
+    },
+    "material_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "material_claim"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "claim_type": {
+          "enum": [
+            "identity",
+            "function",
+            "ownership",
+            "repair",
+            "cost",
+            "privacy",
+            "legal_applicability"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "established",
+            "contradicted",
+            "unresolved"
+          ]
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "relative_path": {
+                "type": "string",
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*[\\\\:]).+$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "relative_path",
+              "sha256",
+              "locator"
+            ]
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "claim_type",
+        "statement",
+        "status",
+        "method",
+        "reviewer_ref",
+        "source_refs",
+        "limitations"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "established"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "operating_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "operating_review"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "upstream_result_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capture_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "policy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "item_receipt_cents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "shipping_collected_cents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "acquisition_cents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cost_lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "exposure_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "category": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount_cents": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "treatment": {
+                "enum": [
+                  "cash",
+                  "noncash",
+                  "reserve"
+                ]
+              },
+              "basis_kind": {
+                "enum": [
+                  "observed",
+                  "quoted",
+                  "policy",
+                  "estimate",
+                  "synthetic",
+                  "unresolved"
+                ]
+              },
+              "basis_claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "incurred_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "allocation_rule_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "exposure_id",
+              "category",
+              "amount_cents",
+              "treatment",
+              "basis_kind",
+              "basis_claim_ids",
+              "incurred_at",
+              "allocation_rule_id"
+            ]
+          }
+        },
+        "scenario_status": {
+          "enum": [
+            "complete",
+            "unresolved"
+          ]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "purchase_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "case_id",
+        "upstream_result_sha256",
+        "capture_sha256",
+        "policy_id",
+        "as_of",
+        "item_receipt_cents",
+        "shipping_collected_cents",
+        "acquisition_cents",
+        "cost_lines",
+        "scenario_status",
+        "assumptions",
+        "purchase_authorized"
+      ]
+    },
+    "transaction_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "transaction_route"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "const": "acquire_for_resale"
+        },
+        "buyer_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seller_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delivery_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terms_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terms_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "eligibility": {
+          "enum": [
+            "eligible",
+            "ineligible",
+            "unresolved"
+          ]
+        },
+        "eligibility_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "item_party_payment_binding": {
+          "enum": [
+            "established",
+            "contradicted",
+            "unresolved"
+          ]
+        },
+        "inspection_before_release_plan_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intervention_exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "ownership_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "claim_deadline_review_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "residual_risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "purchase_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "case_id",
+        "purpose",
+        "buyer_role",
+        "seller_role",
+        "provider",
+        "jurisdiction",
+        "delivery_method",
+        "terms_ref",
+        "terms_version",
+        "eligibility",
+        "eligibility_claim_ids",
+        "item_party_payment_binding",
+        "inspection_before_release_plan_ref",
+        "intervention_exclusions",
+        "ownership_claim_ids",
+        "claim_deadline_review_ref",
+        "valid_until",
+        "residual_risks",
+        "purchase_authorized"
+      ]
+    },
+    "reservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "reservation"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capacity_snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "enum": [
+            "tentative",
+            "committed",
+            "released",
+            "expired",
+            "closed"
+          ]
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resource_requests": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "reconciliation_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "purchase_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "case_id",
+        "idempotency_key",
+        "capacity_snapshot_id",
+        "state",
+        "expires_at",
+        "resource_requests",
+        "reconciliation_ref",
+        "purchase_authorized"
+      ]
+    },
+    "outcome_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "outcome_event"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cohort_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_type": {
+          "enum": [
+            "lead_observed",
+            "unavailable",
+            "contact_authorized",
+            "contact_failed",
+            "inspection",
+            "human_declined",
+            "human_approved",
+            "acquired",
+            "listed",
+            "sold_reported",
+            "delivered",
+            "payment_held",
+            "payment_cleared",
+            "return_opened",
+            "returned",
+            "refunded",
+            "claim_opened",
+            "claim_closed",
+            "disposed",
+            "followup_censored"
+          ]
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "physical_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "financial_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cash_delta_cents": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "operator_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "supersedes_event_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "case_id",
+        "cohort_id",
+        "event_type",
+        "occurred_at",
+        "physical_state",
+        "financial_state",
+        "cash_delta_cents",
+        "operator_minutes",
+        "basis_refs",
+        "supersedes_event_id",
+        "limitations"
+      ]
+    },
+    "human_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_type": {
+          "const": "human_decision"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "approve",
+            "decline",
+            "defer"
+          ]
+        },
+        "readiness_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "initial_judgment_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "advice_exposure_log_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "execution_receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "record_type",
+        "schema_version",
+        "record_id",
+        "created_at",
+        "synthetic",
+        "case_id",
+        "actor_ref",
+        "decision",
+        "readiness_snapshot_sha256",
+        "initial_judgment_ref",
+        "advice_exposure_log_ref",
+        "reason",
+        "approved_scope",
+        "valid_until",
+        "execution_receipt_ref"
+      ]
+    }
+  }
+}

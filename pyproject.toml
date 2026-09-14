@@ -13,6 +13,7 @@ license-files = ["LICENSE"]
 dependencies = [
   "beautifulsoup4==4.15.0",
   "Pillow==12.3.0",
+  "jsonschema==4.26.0",
   "tzdata==2026.3; sys_platform == 'win32'",
 ]
 classifiers = [
@@ -31,9 +32,10 @@ browser = ["playwright==1.62.0"]
 resale = "resale_tool.cli:main"
 
 [tool.setuptools]
-packages = ["resale_tool", "collector", "evaluation", "pilot"]
+packages = ["resale_tool", "collector", "evaluation", "pilot", "operations", "operations.experiments"]
 include-package-data = false
 
 [tool.setuptools.package-data]
 resale_tool = ["resources/REVIEWER.md", "resources/VALUATOR.md"]
 evaluation = ["browser_capture.mjs"]
+operations = ["resources/contracts.schema.json", "resources/desktop_protocol.md", "resources/stress_cases.md", "resources/benchmark_protocol.md", "resources/offer_protocol.md"]

@@ -1,4 +1,4 @@
 playwright==1.62.0
 beautifulsoup4==4.15.0
 Pillow==12.3.0
-
+jsonschema==4.26.0

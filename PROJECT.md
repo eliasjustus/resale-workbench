@@ -1,6 +1,17 @@
 # Resale Workbench status
 
-Updated 2026-09-13. This is the reusable software status. Owner-specific decisions and previous documents are retained privately outside release inputs.
+Updated 2026-09-14. This is the reusable software status. Owner-specific decisions and previous documents are retained privately outside release inputs.
+
+Selected owner-authorized public research report derivatives and an independent
+researcher brief are available under the repository's `private/` folder; its name
+does not provide access control. Original evidence and operating records remain
+outside published source. See
+[research context](https://github.com/eliasjustus/resale-workbench/blob/main/private/README.md)
+for the critical distinction between code implementation, actual research gains
+and the still-outstanding fresh discovery workflow. Those repository-only reports
+are not included in software release packages.
+
+Unreleased offline operations work now also includes current-condition desktop inspection, reviewed comparable adjustments, consecutive cohort/cash-flow and fixed actual-cost reporting, independent benchmark tooling, authenticated intake pause/exit review and truthful documentation experiment drafts. Forty-three companion record types remain separate from upstream economic/run schemas. Synthetic stress tests exercise actual process races, crashes and bounded SQLite-full failures. A qualified worker boundary, transfer integration and the operations CLI remain incomplete. No live experiment or marketplace action is enabled by these modules.
 
 Resale Workbench 0.1.0 is the MIT-licensed GitHub release at [eliasjustus/resale-workbench](https://github.com/eliasjustus/resale-workbench). The current supported economic market is Germany/EUR, with an optional Kleinanzeigen collector and a manually coordinated evidence-preparation/valuation workflow. The console command remains `resale`. Release preparation does not start live collection, model jobs or schedules.
 
@@ -13,6 +24,8 @@ Customization fixes: supervised search preparation binds an inspected native URL
 Simplification: `resale run/search/capture` provides the normal command interface with config-relative default run creation, automatic discovery-file paths and offline next-action status. Existing module entry points delegate to shared implementations. Current economic CLI paths use one retained-file-aware service; schema-1 replay is explicitly labelled. Queue command parsing and report rendering are separate modules, and pure listing-time eligibility no longer depends on browser orchestration. Role instructions have one canonical editable source. Handoff finalization generates a missing packet index while preserving existing authored indices. Shared synthetic fixture builders replace dependencies between test classes. One candidate-check command stages, builds and verifies the actual release inputs. Stored schemas and historical run artifacts are unchanged. Valuation reasoning and lessons remain substantive authored outputs.
 
 Read README.md for setup and demonstrations, RUNNER.md for the supervised procedure, PRIVACY.md for data boundaries, and PUBLISHING.md for release checks. GitHub releases carry software assets; operational logs and private preparation reports are excluded. Use CONTRIBUTING.md for public synthetic bug reports and SECURITY.md for private vulnerability reporting.
+
+Operations foundation: fixed synthetic inputs and complete baseline results protect the current economic service, explicit historical replay, frozen configuration and read-only old-run inspection. Installed-wheel checks exercise the same compatibility cases outside the checkout and verify all declared runtime modules and resource bytes, including a deliberate missing-file failure. The separate operations package adds strict companion contracts, evidence/lineage checks, fixed operating scenarios, reviewed routes/deadlines, explicit private policy and a local append-only SQLite journal. Atomic cash/time/storage holds and statement reconciliation support six-check readiness and process-authenticated local human decisions under explicit reviewed grants. Manual preflight records a commitment and retains unknown outcomes for reconciliation; it performs no external action. See OPERATIONS.md for contracts and limits. A `resale ops` command and qualified executor remain planned. Missing operator inputs constrain live use, but do not block offline development with synthetic fixtures.
 
 Limits: independent facts and visual judgments still require substantive inspection. Provider availability, source permissions, supported model/tool access and real valuation quality are not established by offline tests. The executor is manual; no agent sandbox, hosted account system or automatic token/cash meter is provided. Python tests on the current machine and a configured CI matrix do not prove every supported platform has run successfully. Live access and independent human onboarding remain separate evaluations.
 

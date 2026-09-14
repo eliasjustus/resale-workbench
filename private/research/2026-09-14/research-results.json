@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "record_kind": "private_coordinator_research",
+  "date": "2026-09-14",
+  "synthetic": false,
+  "price_exposed": true,
+  "blind_experiment": false,
+  "model_roles_redispatched": false,
+  "full_operations_service_executed": false,
+  "fresh_formal_economic_evaluation": false,
+  "purchase_authorized": false,
+  "scope": [
+    "3510971083",
+    "3511992820"
+  ],
+  "cases": [
+    {
+      "case_id": "3510971083",
+      "retained_run": "2026-09-13-001",
+      "retained_asking_price_eur": "600.00",
+      "outcome": "unresolved",
+      "research_priority": "low_at_retained_ask",
+      "fully_audited_transaction_count": 0,
+      "partially_audited_same_cpu_gpu_sold_reports": 1,
+      "whole_pc_sold_report_rows": 3,
+      "primary_candidate": {
+        "source_id": "298567238585",
+        "url": "https://www.ebay.de/itm/298567238585",
+        "source_kind": "transaction",
+        "transaction_state": "sold_reported",
+        "event_date": "2026-08-25",
+        "units_reported": 1,
+        "item_price_eur": "522.30",
+        "shipping_research_eur": "24.10",
+        "original_crossed_out_ask_eur": "549.00",
+        "original_shipping_eur": "23.99",
+        "original_offer_status": "accepted_offer",
+        "seller_country": "DE",
+        "seller_role": "private",
+        "condition_label": "used",
+        "photo_total": 10,
+        "photos_inspected": 4,
+        "settlement_verified": false,
+        "comparison": "Same claimed CPU/GPU and H510M PRO; more RAM/storage and different PSU/case/component brands; physical function unverified.",
+        "unpublished_original_evidence_files": [
+          "pc-search-dom.txt",
+          "pc-search-rendered.txt",
+          "pc-condition-filter-dom.txt",
+          "pc-sale-original-dom.txt",
+          "pc-sale-description.txt",
+          "pc-sale-images/manifest.json"
+        ]
+      },
+      "secondary_rows": [
+        {
+          "source_id": "168623127241",
+          "item_price_eur": "677.10",
+          "date": "2026-08-19",
+          "gpu": "RTX3060Ti",
+          "original_inspected": false
+        },
+        {
+          "source_id": "227485455499",
+          "item_price_eur": "422.14",
+          "date": "2026-08-28",
+          "gpu": "RTX3060Ti",
+          "original_inspected": false
+        }
+      ],
+      "arithmetic": {
+        "kind": "comparison_only",
+        "reported_comp_price_minus_target_ask_eur": "-77.70",
+        "not_profit": true
+      },
+      "supported_value_eur": null,
+      "maximum_acquisition_eur": null,
+      "cost_total_eur": null,
+      "limitations": [
+        "Sale price is source-reported, not bank settlement.",
+        "Only four of ten comparable photos inspected.",
+        "Search requested 180 days, date button last year, displayed results 16 Aug–14 Sep 2026.",
+        "Target current availability and function not rechecked.",
+        "No complete established costs or independent valuation."
+      ]
+    },
+    {
+      "case_id": "3511992820",
+      "retained_run": "2026-09-13-002",
+      "retained_asking_price_eur": "1900.00",
+      "outcome": "unresolved",
+      "research_priority": "physical_diagnosis_before_purchase_consideration",
+      "fully_audited_transaction_count": 0,
+      "accepted_whole_car_sold_reports": 0,
+      "whole_vehicle_sold_report_rows": 8,
+      "whole_vehicle_sold_report_rows_within_180_days": 4,
+      "originals_inspected_and_excluded_as_direct_comps": [
+        {
+          "source_id": "178403438640",
+          "event_date": "2026-08-13",
+          "research_price_eur": "1390.17",
+          "original_price_eur": "1398.60",
+          "price_discrepancy_resolved": false,
+          "transaction_state": "sold_reported",
+          "settlement_verified": false,
+          "registration": "2012-04",
+          "km": 179800,
+          "seats": 5,
+          "fuel": "diesel",
+          "seller_role": "private",
+          "seller_country": "DE",
+          "condition_claim": "engine damage; not roadworthy",
+          "gallery_inspected": false,
+          "use": "damaged-car context only; no target valuation or salvage floor"
+        },
+        {
+          "source_id": "237030986850",
+          "event_date": "2026-09-02",
+          "research_price_eur": "1258.00",
+          "original_price_eur": "1260.00",
+          "price_discrepancy_resolved": false,
+          "transaction_state": "sold_reported",
+          "settlement_verified": false,
+          "registration": "2014-02",
+          "km": 280000,
+          "seats": 2,
+          "fuel_specifics": "petrol",
+          "seller_role": "conflicting: commercial account versus private item specifics",
+          "description_route": "business buyers only",
+          "condition_claim": "accident damage; overdue brake and timing-drive work",
+          "gallery_inspected": false,
+          "use": "excluded from direct comparables"
+        }
+      ],
+      "asking_context": [
+        {
+          "source": "mobile.de 2012 results",
+          "price_eur": "2650.00",
+          "registration": "2012-10",
+          "km": 157000,
+          "ps": 92,
+          "seller_role": "dealer",
+          "exact_listing_audited": false
+        },
+        {
+          "source": "mobile.de 2012 results",
+          "price_eur": "5900.00",
+          "registration": "2012-01",
+          "km": 146512,
+          "ps": 92,
+          "seller_role": "dealer",
+          "exact_listing_audited": false
+        }
+      ],
+      "auction_lead": {
+        "source_id": "Zoll-Auktion 952811",
+        "source_kind": "search_cached_auction_end_report",
+        "amount_eur": "3503.00",
+        "event_date": "2026-04-28",
+        "registration_year": 2014,
+        "km": 122525,
+        "engine": "HDi75",
+        "original_available": false,
+        "settlement_verified": false,
+        "accepted": false
+      },
+      "ebay_attempt": {
+        "query": "Citroen Berlingo",
+        "observed_period": "2025-09-14/2026-09-14",
+        "intended_category": "Auto & Motorrad: Fahrzeuge",
+        "dialog_count": 8,
+        "initial_misapplied_category": "Heimwerker",
+        "actual_applied_category": "Auto & Motorrad: Fahrzeuge",
+        "condition": "Gebraucht",
+        "status": "recovered_successfully_in_fresh_background_tab",
+        "verified_zero_vehicle_sales": false,
+        "unpublished_original_evidence_files": [
+          "car-all-categories-dom.txt",
+          "car-category-misapplied-dom.txt",
+          "car-vehicle-search-dom.txt",
+          "car-vehicle-search-rendered.txt",
+          "car-vehicle-search-metadata.json",
+          "car-sale-178403438640-original-dom.txt",
+          "car-sale-178403438640-description.txt",
+          "car-sale-237030986850-original-dom.txt",
+          "car-sale-237030986850-description.txt"
+        ]
+      },
+      "supported_value_eur": null,
+      "maximum_acquisition_eur": null,
+      "cost_total_eur": null,
+      "arithmetic": null,
+      "required_evidence": [
+        "Oil leak location/severity and written repair quote",
+        "AC diagnosis and written repair quote",
+        "Asset identity, documents, mileage, service and seven-seat verification",
+        "Stronger completed-sale original evidence",
+        "Inspection, transport, repairs, preparation, selling and work costs"
+      ]
+    }
+  ],
+  "comparison": {
+    "baseline_directory": "Local original omitted; see COMPARISON.md and PROVENANCE.json.",
+    "fresh_evidence_gain": true,
+    "paired_valuation_score_available": false,
+    "realized_profit_available": false,
+    "matched_workflow_cost_comparison_available": false
+  },
+  "publication": {
+    "public": true,
+    "derived": true,
+    "raw_evidence_included": false,
+    "reproducibility_limit": "Published summaries do not permit independent replay of omitted raw source captures or operating state."
+  }
+}

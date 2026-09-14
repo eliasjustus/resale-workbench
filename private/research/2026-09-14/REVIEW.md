@@ -1,0 +1,21 @@
+> Public report derivative, published with owner authorization. The folder name `private` does not restrict access. Raw captures, account-bearing browser output, original run files and local verification logs are not included. Statements about those artifacts describe the retained local evidence; they are not claims that the originals are bundled here. See [README](README.md) and [PROVENANCE](PROVENANCE.json).
+
+# Independent review — fresh research, 14 September 2026
+
+Verdict: no substantive error or blocker to the bounded research completion described in TASK.md was found. This accepts the evidence summary and its limits, not a valuation, acquisition decision, physical inspection or settled transaction.
+
+Reviewed TASK.md, revised RESULTS.md and research-results.json after vehicle-search recovery, INSPECTION.md, retained browser/search evidence, verification code and checkpoint records. No market search, seller contact, workflow rerun or source edit was performed for this review. This file is the reviewer's only authored artifact.
+
+## Decisive checks
+
+- PC search evidence links item 298567238585 to one unit, 25 August 2026, EUR 522.30 and EUR 24.10 shipping. The original shows an accepted offer, EUR 549.00 displayed price and EUR 23.99 shipping. The report preserves these distinctions and does not substitute the original displayed price for a settled sale. The seller description supports the stated CPU/GPU, larger RAM/storage and different PSU; specifications remain seller claims. Original context identifies a private seller and Berlin, Germany.
+- Independently inspected all four retained PC images. Exterior angles, illuminated fans and a visible graphics card support the limited visual account. They establish neither exact installed specifications nor stable operation. The ten-image gallery and six uninspected images are disclosed. The used-condition checkbox and contradictory date controls are retained. The arithmetic is exactly EUR 522.30 minus EUR 600.00 = EUR -77.70, explicitly not profit.
+- Recovered vehicle evidence has eight sold-report rows in the applied vehicle category. Independently extracted their dates: four fall within 180 days of 14 September 2026. The two inspected originals support the exclusions: 178403438640 has five seats, diesel, 179,800 km and seller-described engine damage; 237030986850 has two seats, petrol item specifics, 280,000 km and the documented commercial/private seller-role conflict. Descriptions support the fault and business-buyer limitations. Both research/original price discrepancies are preserved. No gallery audit or target salvage floor is claimed.
+- Retained web responses support the MSI configuration example, mobile.de asking context, cached Zoll auction-end lead and general inspection guidance. Their use does not establish target configuration, settlement, repair cost or comparable condition. The source distinctions and exclusions are appropriate.
+- Independently rehashed all 341 files in the historical baseline twice during review, including after vehicle recovery: no differences. The initial 27-entry evidence manifest matched its checkpoint when first checked. RESULTS.md and research-results.json subsequently changed for the disclosed recovery; that manifest is historical, not a hash claim for the revised closeout. Final preservation verification and a supplemental manifest remain the coordinator's closeout step.
+
+## Interpretation and residual limits
+
+Lower research priority for the PC is a bounded judgment from one partially audited comparison, not a precise value or proof that resale is impossible. Vehicle diagnosis and stronger matching transaction evidence remain necessary. Asking context and excluded damaged vehicles cannot supply an achievable resale price or repair allowance.
+
+The reports correctly distinguish fresh coordinator research from blind role execution, a formal economic evaluation and the full operations service. INSPECTION.md is explicitly prepared rather than performed. Physical access, permission, qualified inspection, current availability, complete costs and transaction settlement remain unverified. These limits prevent purchase readiness; they do not contradict the stated research acceptance criteria. This review does not independently reconstruct every browser action or certify absence of unlogged actions.

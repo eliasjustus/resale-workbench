@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-09-14T19:14:22.392455+00:00",
+  "public": true,
+  "owner_authorized": true,
+  "raw_evidence_included": false,
+  "original_reports_modified": false,
+  "reproducibility_limit": "Local original hashes bind retained report bytes; originals, run manifests, captures, local scripts and logs are not bundled. This publication is not an independent replication.",
+  "files": [
+    {
+      "published_path": "RESULTS.md",
+      "original_record": "private/fresh-case-research-2026-09-14/RESULTS.md",
+      "original_sha256": "58c9b2edbbe661c25c60bf5da70032b15afd7bf8be02786d5f843ba49e0daa4c",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording. Reworded local retention/publication statements to distinguish this public derivative from omitted local originals.",
+      "published_sha256": "0dc15d69d8bf67e8663d9e1094412287dfbc81a5c479a14cb6d0ccf9e7192592"
+    },
+    {
+      "published_path": "RETROSPECTIVE.md",
+      "original_record": "private/fresh-case-research-2026-09-14/RETROSPECTIVE.md",
+      "original_sha256": "8f8f2d83045495d52937065e2c70365a878103621fbcd84b3640bf416050edbd",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording. Reworded local retention/publication statements to distinguish this public derivative from omitted local originals.",
+      "published_sha256": "78d6b6222bf29bda07898bd70d001a9df62eaa8d6271a5ab573a33daad5104b2"
+    },
+    {
+      "published_path": "INSPECTION.md",
+      "original_record": "private/fresh-case-research-2026-09-14/INSPECTION.md",
+      "original_sha256": "6950e4603dc74a4f2d0e626a80bc607d984b76134666671405ab880ac1159542",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording.",
+      "published_sha256": "0207247671122a10b8fabb40ba8a4bba05ac8c60ab365b4f66822a2ff4d532b7"
+    },
+    {
+      "published_path": "REVIEW.md",
+      "original_record": "private/fresh-case-research-2026-09-14/REVIEW.md",
+      "original_sha256": "dacf8788cdee7d7f26b4fd5e73ad591c89f973aa8f274d4b6ee65cfe5d7c298e",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording.",
+      "published_sha256": "57cc27bd9c31f7cecccec6a4d7a84880c7ba29174dea005b62ff157dbeeb4bf6"
+    },
+    {
+      "published_path": "COMPARISON.md",
+      "original_record": "private/workflow-comparison-2026-09-14/COMPARISON.md",
+      "original_sha256": "81815d7d596326f0f77b9ef18784c70dede6832b8f3568d420a98020780a866c",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording. Reworded local retention/publication statements to distinguish this public derivative from omitted local originals.",
+      "published_sha256": "acfe501c594e9be699e4e5140318fc38a0c80c244b2ada2ad5a4727301c12e96"
+    },
+    {
+      "published_path": "ACCEPTANCE-MAP.md",
+      "original_record": "private/operations-implementation-2026-09-14/ACCEPTANCE-MAP.md",
+      "original_sha256": "f1bd986a89943ce83bf25edf55aa74c0122e77c112166b794905edad1f564361",
+      "derivation": "Added public-derivative notice; converted local document links to repository links or explicit unavailable-original labels; generalized local runtime/operator wording.",
+      "published_sha256": "c45c9fe995a295d86dccc394972f8f4039412bd1cd9af48fd86889069d97daec"
+    },
+    {
+      "published_path": "research-results.json",
+      "original_record": "private/fresh-case-research-2026-09-14/research-results.json",
+      "original_sha256": "b9eff3dd47291e9580b871771c1488036790a6fb912aa83587d6828c6b284062",
+      "derivation": "Removed machine-local path; renamed unbundled evidence-file fields; added public derivative and replay limits.",
+      "published_sha256": "840037d75ec11b334fbd3e561bdfb883a62aa90f4e5a642d1876d94eed673af7"
+    },
+    {
+      "published_path": "README.md",
+      "published_sha256": "f14ddcbba8665544e619d8a94911e181bbe2b77eb5faafa1f814782ddf49e840",
+      "derivation": "New repository-only explanatory summary; based on selected local reports and current project source. Not an original source capture."
+    },
+    {
+      "published_path": "IMPLEMENTATION-STATUS.md",
+      "published_sha256": "20f657e2ebcbae54c778ad3cb321d5273366db3f30908f3a710e16926693db1a",
+      "derivation": "New repository-only explanatory summary; based on selected local reports and current project source. Not an original source capture."
+    },
+    {
+      "published_path": "RESEARCH-QUESTIONS.md",
+      "published_sha256": "5cfa725d7f1c93bc4cab4def0b8479626180a277bda54e426c6357febbb2fac4",
+      "derivation": "New repository-only explanatory summary; based on selected local reports and current project source. Not an original source capture."
+    }
+  ]
+}

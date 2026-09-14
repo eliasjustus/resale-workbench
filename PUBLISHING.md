@@ -31,6 +31,14 @@ CI is configured for Windows/Linux and Python 3.11/3.13. Check the actual remote
 
 ## Preserve the data and source boundaries
 
+The repository also contains a specifically owner-authorized selection of public
+report derivatives under `private/research/2026-09-14/`, with an index and researcher
+brief under `private/`. That directory name provides no privacy. These documents
+are repository context and are deliberately absent from `release-files.json`,
+the wheel, sdist and checked source ZIP. Do not broaden the release allowlist or
+force-add the local private tree to include them. Review and stage individual
+approved report paths; keep raw evidence, account data and local logs excluded.
+
 Use invented fixtures for bug reproductions; do not put real marketplace evidence into tests. Shared role instructions live in `resale_tool/resources/REVIEWER.md` and `VALUATOR.md`; root pages link to them. Optional operator capabilities belong in private configuration.
 
 The MIT License covers this software, not marketplace photos, listings or account data. Automated source access and evidence reuse/model processing require their own permission. See [Kleinanzeigen terms](https://themen.kleinanzeigen.de/nutzungsbedingungen/). Publishing or installing Resale Workbench does not start collection, dispatch agents or enable scheduling.

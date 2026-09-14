@@ -2,6 +2,13 @@ include pyproject.toml MANIFEST.in README.md requirements.txt
 recursive-include collector *.py
 recursive-include evaluation *.py browser_capture.mjs
 recursive-include pilot *.py
+recursive-include operations *.py
+include operations/resources/contracts.schema.json
+include operations/resources/desktop_protocol.md
+include operations/resources/stress_cases.md
+include operations/resources/benchmark_protocol.md
+include operations/resources/offer_protocol.md
+include tests/fixtures/operations-draft.schema.json tests/fixtures/operations-records.json
 recursive-include resale_tool *.py
 include resale_tool/resources/REVIEWER.md resale_tool/resources/VALUATOR.md
 recursive-include tests test_*.py
@@ -9,7 +16,9 @@ include tests/helpers.py tests/browser_helpers.py
 include .github/workflows/tests.yml
 include tools/stage_release.py release-files.json
 include tools/check_candidate.py
+include tests/fixtures/operations-baseline.json tests/fixtures/README.md
 prune data
+prune private
 prune runs
 prune research
 prune validation
@@ -18,5 +27,6 @@ prune dist
 include AGENTS.md CLAUDE.md PROJECT.md DAILY.md RUNNER.md SPECIALISTS.md REVIEWER.md VALUATOR.md
 include PRIVACY.md PUBLISHING.md CONTRIBUTING.md .gitignore
 include LICENSE SECURITY.md CHANGELOG.md .github/ISSUE_TEMPLATE/bug_report.md
+include OPERATIONS.md
 global-exclude *.sqlite3 *.sqlite3-* *.db *.db-* *.pyc .env .env.*
 global-exclude __pycache__

@@ -1,0 +1,984 @@
+{
+  "synthetic": true,
+  "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+  "baseline_commit": "aec6a133bd532eef3e61e402aa8698957cd00bc5",
+  "contracts": {
+    "workflow": 2,
+    "handoff": 2,
+    "valuation": 2,
+    "repair": 1
+  },
+  "cases": {
+    "supported": {
+      "record": {
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "collection_status": "complete",
+        "fields": {
+          "title": {
+            "value": "Fictional Example Device"
+          },
+          "asking_price": {
+            "value": "50 €"
+          }
+        },
+        "photos": [
+          {
+            "index": 1,
+            "status": "downloaded",
+            "local_path": "photos/01.txt",
+            "sha256": "c0f8577caa2c5057f37bce0272c896ed0862c4a46f2e3206b862a7ff6b45b838"
+          }
+        ]
+      },
+      "review": {
+        "schema_version": 2,
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "as_of": "2026-01-15",
+        "review_mode": "synthetic_compatibility_fixture",
+        "scope": {
+          "status": "included",
+          "evidence": [
+            "Fictional in-scope item"
+          ]
+        },
+        "work": {
+          "required": false,
+          "evidence": [
+            "Fictional completed function inspection"
+          ]
+        },
+        "contradictions": [],
+        "acquisition_price": {
+          "eur": "50",
+          "source_text": "50 €"
+        },
+        "costs": {
+          "acquisition_transport": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "resale_shipping": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "fees": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "packaging": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "defect_allowance": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          }
+        },
+        "transaction_adequacy": {
+          "status": "sufficient",
+          "evidence_ids": [
+            "demo-sale-1",
+            "demo-sale-2"
+          ],
+          "reason": "Invented exact matches demonstrate the declaration contract only.",
+          "limitations": [
+            "Fictional transactions; no actual evidence or model judgment."
+          ]
+        },
+        "comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/2",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "110"
+          }
+        ],
+        "identity": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "condition": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "gallery": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      },
+      "retained_evidence": {
+        "schema_version": 1,
+        "root": "${CAPTURE}",
+        "files": [
+          {
+            "path": "synthetic-evidence.txt",
+            "sha256": "8bd6e7dc01dacecc1966ef97677d8e0b9465affdab9d3140a139b51e22ac4eea"
+          }
+        ]
+      },
+      "expected": {
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "opportunity_policy": "configured-germany-eur-v1",
+        "as_of": "2026-01-15",
+        "outcome": "supported",
+        "reasons": [
+          "meets_required_net_profit"
+        ],
+        "accepted_comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "item_price_eur": "110"
+          }
+        ],
+        "excluded_comps": [],
+        "arithmetic": {
+          "conservative_sale_scenario_eur": "100.00",
+          "costs_eur": "10.00",
+          "net_proceeds_eur": "90.00",
+          "acquisition_price_eur": "50.00",
+          "margin_eur": "40.00",
+          "required_profit_eur": "20.00",
+          "maximum_acquisition_price_eur": "70.00"
+        },
+        "purchase_authorized": false,
+        "review_mode": "synthetic_compatibility_fixture",
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      }
+    },
+    "unsupported": {
+      "record": {
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "collection_status": "complete",
+        "fields": {
+          "title": {
+            "value": "Fictional Example Device"
+          },
+          "asking_price": {
+            "value": "90 €"
+          }
+        },
+        "photos": [
+          {
+            "index": 1,
+            "status": "downloaded",
+            "local_path": "photos/01.txt",
+            "sha256": "c0f8577caa2c5057f37bce0272c896ed0862c4a46f2e3206b862a7ff6b45b838"
+          }
+        ]
+      },
+      "review": {
+        "schema_version": 2,
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "as_of": "2026-01-15",
+        "review_mode": "synthetic_compatibility_fixture",
+        "scope": {
+          "status": "included",
+          "evidence": [
+            "Fictional in-scope item"
+          ]
+        },
+        "work": {
+          "required": false,
+          "evidence": [
+            "Fictional completed function inspection"
+          ]
+        },
+        "contradictions": [],
+        "acquisition_price": {
+          "eur": "90",
+          "source_text": "90 €"
+        },
+        "costs": {
+          "acquisition_transport": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "resale_shipping": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "fees": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "packaging": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "defect_allowance": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          }
+        },
+        "transaction_adequacy": {
+          "status": "sufficient",
+          "evidence_ids": [
+            "demo-sale-1",
+            "demo-sale-2"
+          ],
+          "reason": "Invented exact matches demonstrate the declaration contract only.",
+          "limitations": [
+            "Fictional transactions; no actual evidence or model judgment."
+          ]
+        },
+        "comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/2",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "110"
+          }
+        ],
+        "identity": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "condition": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "gallery": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      },
+      "retained_evidence": {
+        "schema_version": 1,
+        "root": "${CAPTURE}",
+        "files": [
+          {
+            "path": "synthetic-evidence.txt",
+            "sha256": "8bd6e7dc01dacecc1966ef97677d8e0b9465affdab9d3140a139b51e22ac4eea"
+          }
+        ]
+      },
+      "expected": {
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "opportunity_policy": "configured-germany-eur-v1",
+        "as_of": "2026-01-15",
+        "outcome": "unsupported",
+        "reasons": [
+          "below_required_net_profit"
+        ],
+        "accepted_comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "item_price_eur": "110"
+          }
+        ],
+        "excluded_comps": [],
+        "arithmetic": {
+          "conservative_sale_scenario_eur": "100.00",
+          "costs_eur": "10.00",
+          "net_proceeds_eur": "90.00",
+          "acquisition_price_eur": "90.00",
+          "margin_eur": "0.00",
+          "required_profit_eur": "20.00",
+          "maximum_acquisition_price_eur": "70.00"
+        },
+        "purchase_authorized": false,
+        "review_mode": "synthetic_compatibility_fixture",
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      }
+    },
+    "unresolved": {
+      "record": {
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "collection_status": "complete",
+        "fields": {
+          "title": {
+            "value": "Fictional Example Device"
+          },
+          "asking_price": {
+            "value": "50 €"
+          }
+        },
+        "photos": [
+          {
+            "index": 1,
+            "status": "downloaded",
+            "local_path": "photos/01.txt",
+            "sha256": "c0f8577caa2c5057f37bce0272c896ed0862c4a46f2e3206b862a7ff6b45b838"
+          }
+        ]
+      },
+      "review": {
+        "schema_version": 2,
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "as_of": "2026-01-15",
+        "review_mode": "synthetic_compatibility_fixture",
+        "scope": {
+          "status": "included",
+          "evidence": [
+            "Fictional in-scope item"
+          ]
+        },
+        "work": {
+          "required": false,
+          "evidence": [
+            "Fictional completed function inspection"
+          ]
+        },
+        "contradictions": [],
+        "acquisition_price": {
+          "eur": "50",
+          "source_text": "50 €"
+        },
+        "costs": {
+          "acquisition_transport": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "resale_shipping": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "fees": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "packaging": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "defect_allowance": {
+            "eur": null,
+            "basis": null
+          }
+        },
+        "transaction_adequacy": {
+          "status": "sufficient",
+          "evidence_ids": [
+            "demo-sale-1",
+            "demo-sale-2"
+          ],
+          "reason": "Invented exact matches demonstrate the declaration contract only.",
+          "limitations": [
+            "Fictional transactions; no actual evidence or model judgment."
+          ]
+        },
+        "comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/2",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "110"
+          }
+        ],
+        "identity": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "condition": {
+          "status": "unresolved",
+          "evidence": []
+        },
+        "gallery": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      },
+      "retained_evidence": {
+        "schema_version": 1,
+        "root": "${CAPTURE}",
+        "files": [
+          {
+            "path": "synthetic-evidence.txt",
+            "sha256": "8bd6e7dc01dacecc1966ef97677d8e0b9465affdab9d3140a139b51e22ac4eea"
+          }
+        ]
+      },
+      "expected": {
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "opportunity_policy": "configured-germany-eur-v1",
+        "as_of": "2026-01-15",
+        "outcome": "unresolved",
+        "reasons": [
+          "condition_unresolved",
+          "cost_unknown: defect_allowance"
+        ],
+        "accepted_comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "item_price_eur": "100"
+          },
+          {
+            "evidence_id": "demo-sale-2",
+            "item_price_eur": "110"
+          }
+        ],
+        "excluded_comps": [],
+        "arithmetic": null,
+        "purchase_authorized": false,
+        "review_mode": "synthetic_compatibility_fixture",
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      }
+    },
+    "legacy": {
+      "record": {
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "collection_status": "complete",
+        "fields": {
+          "title": {
+            "value": "Fictional Example Device"
+          },
+          "asking_price": {
+            "value": "50 €"
+          }
+        },
+        "photos": [
+          {
+            "index": 1,
+            "status": "downloaded",
+            "local_path": "photos/01.txt",
+            "sha256": "c0f8577caa2c5057f37bce0272c896ed0862c4a46f2e3206b862a7ff6b45b838"
+          }
+        ]
+      },
+      "review": {
+        "schema_version": 1,
+        "notice": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.",
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "as_of": "2026-01-15",
+        "review_mode": "synthetic_compatibility_fixture",
+        "scope": {
+          "status": "included",
+          "evidence": [
+            "Fictional in-scope item"
+          ]
+        },
+        "work": {
+          "required": false,
+          "evidence": [
+            "Fictional completed function inspection"
+          ]
+        },
+        "contradictions": [],
+        "acquisition_price": {
+          "eur": "50",
+          "source_text": "50 €"
+        },
+        "costs": {
+          "acquisition_transport": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "resale_shipping": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "fees": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "packaging": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          },
+          "defect_allowance": {
+            "eur": "2",
+            "basis": "Invented demo cost only"
+          }
+        },
+        "transaction_adequacy": {
+          "status": "sufficient",
+          "evidence_ids": [
+            "demo-sale-1",
+            "demo-sale-2"
+          ],
+          "reason": "Invented exact matches demonstrate the declaration contract only.",
+          "limitations": [
+            "Fictional transactions; no actual evidence or model judgment."
+          ]
+        },
+        "comps": [
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100",
+            "sale_id": "0"
+          },
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100",
+            "sale_id": "1"
+          },
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100",
+            "sale_id": "2"
+          },
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100",
+            "sale_id": "3"
+          },
+          {
+            "evidence_id": "demo-sale-1",
+            "kind": "transaction",
+            "source_paths": [
+              "synthetic-evidence.txt"
+            ],
+            "locator": "fictional://demo/sale/1",
+            "captured_at": "2026-01-15T12:00:00Z",
+            "units_sold": 1,
+            "review_status": "accepted",
+            "review_evidence": [
+              "Invented audited exact current-condition match"
+            ],
+            "condition_basis": "current_condition",
+            "price_basis": "actual_sold_item_price",
+            "currency": "EUR",
+            "seller_country": "DE",
+            "sold_at": "2026-01-01",
+            "item_price_eur": "100",
+            "sale_id": "4"
+          }
+        ],
+        "identity": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "condition": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "gallery": {
+          "status": "resolved",
+          "evidence": [
+            "Fictional inspection declaration"
+          ]
+        },
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        }
+      },
+      "expected": {
+        "listing_id": "synthetic-compatibility",
+        "capture_id": "synthetic-capture-v1",
+        "opportunity_policy": "configured-germany-eur-v1",
+        "as_of": "2026-01-15",
+        "outcome": "supported",
+        "reasons": [
+          "meets_required_net_profit"
+        ],
+        "accepted_comps": [
+          {
+            "sale_id": "0",
+            "item_price_eur": "100"
+          },
+          {
+            "sale_id": "1",
+            "item_price_eur": "100"
+          },
+          {
+            "sale_id": "2",
+            "item_price_eur": "100"
+          },
+          {
+            "sale_id": "3",
+            "item_price_eur": "100"
+          },
+          {
+            "sale_id": "4",
+            "item_price_eur": "100"
+          }
+        ],
+        "excluded_comps": [],
+        "arithmetic": {
+          "conservative_sale_scenario_eur": "100.00",
+          "costs_eur": "10.00",
+          "net_proceeds_eur": "90.00",
+          "acquisition_price_eur": "50.00",
+          "margin_eur": "40.00",
+          "required_profit_eur": "20.00",
+          "maximum_acquisition_price_eur": "70.00"
+        },
+        "purchase_authorized": false,
+        "review_mode": "synthetic_compatibility_fixture",
+        "economic_policy": {
+          "country": "DE",
+          "currency": "EUR",
+          "minimum_profit_eur": "20",
+          "sold_max_age_days": 180
+        },
+        "replay_only": true,
+        "validation_scope": "legacy_record_hash_and_declarations_only"
+      }
+    }
+  },
+  "retained_files": {
+    "photos/01.txt": "SYNTHETIC gallery bytes: hash checks only, not an actual photo.\n",
+    "synthetic-evidence.txt": "SYNTHETIC DEMO: all items, transactions, inspection statements and costs are invented. No market evidence or purchase advice.\r\n"
+  },
+  "frozen_playbooks": {
+    "REVIEWER.md": "SYNTHETIC frozen compatibility playbook: REVIEWER.md\r\n",
+    "VALUATOR.md": "SYNTHETIC frozen compatibility playbook: VALUATOR.md\r\n"
+  },
+  "run_status": {
+    "run_path": "${ROOT}\\frozen-run",
+    "search": "not_prepared",
+    "preparation_open": true,
+    "discovery_imports": 0,
+    "discovery": null,
+    "cases": [],
+    "integrity_errors": [],
+    "next_action": "Inspect native controls, then resale search prepare RUN; external discovery may also be imported.",
+    "checks": "Frozen manifest/playbooks, local search plan and bound target files. Worker output is checked at completion.",
+    "purchase_authorized": false,
+    "network_used": false,
+    "jobs_started": false
+  },
+  "config_text": "schema_version = 1\n# Each workspace keeps its own private state. Relative paths resolve beside this file.\ndata_dir = \"./private-data\"\n\n[search]\ncenter = \"Berlin\"\nradius_km = 50\ncategories = [\"computers\"]\nwindow_hours = 24\n\n# Supply identifiers supported by your chosen executor. These are examples.\n[roles.reviewer]\nmodel = \"gpt-5.6-luna\"\nreasoning_effort = \"xhigh\"\n\n[roles.valuator]\nmodel = \"gpt-5.6-sol\"\nreasoning_effort = \"high\"\n\n[economics]\ncountry = \"DE\"\ncurrency = \"EUR\"\nminimum_profit_eur = \"20\"\nsold_max_age_days = 180\n\n# Preparation limits do not measure tokens, money or stop external agents.\n# One valuation job per selected case remains available after preparation closes.\n# Optional count caps are opt-in; absent caps do not limit listing counts.\n[budget]\n# max_cases = 3\n# reviewer_job_limit = 3\npreparation_minutes = 30\n\n[capabilities]\nnotes = []\n",
+  "configuration": {
+    "schema_version": 1,
+    "data_dir": "${ROOT}\\private-data",
+    "search": {
+      "center": "Berlin",
+      "radius_km": 50,
+      "categories": [
+        "computers"
+      ],
+      "window_hours": 24
+    },
+    "roles": {
+      "reviewer": {
+        "model": "gpt-5.6-luna",
+        "reasoning_effort": "xhigh"
+      },
+      "valuator": {
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "high"
+      }
+    },
+    "economics": {
+      "country": "DE",
+      "currency": "EUR",
+      "minimum_profit_eur": "20",
+      "sold_max_age_days": 180
+    },
+    "budget": {
+      "max_cases": null,
+      "reviewer_job_limit": null,
+      "preparation_minutes": 30
+    },
+    "capabilities": {
+      "notes": []
+    }
+  },
+  "run_manifest": {
+    "schema_version": 1,
+    "run_id": "frozen-run",
+    "started_at": "2026-09-12T12:00:00+00:00",
+    "window_start_inclusive": "2026-09-11T12:00:00+00:00",
+    "window_end_exclusive": "2026-09-12T12:00:00+00:00",
+    "center": "Berlin",
+    "radius_km": 50,
+    "focus": "configured_categories",
+    "sampled_category": "computers",
+    "workflow_version": 2,
+    "sold_research_market": "Germany",
+    "playbooks": {
+      "REVIEWER.md": "f70abb12fd3bdfd3dc03941f8e914a29bad3749f6e7db17986e6d3f1c2aa410f",
+      "VALUATOR.md": "1da3e2de959414e0a07c6eb60c8f356b0e5acfe916d233e67dbce811695f9168"
+    },
+    "mode": "coordinator_driven_supervised_pilot",
+    "purchase_authorized": false,
+    "require_direct_research_capture": false,
+    "configuration": {
+      "schema_version": 1,
+      "data_dir": "${ROOT}\\private-data",
+      "search": {
+        "center": "Berlin",
+        "radius_km": 50,
+        "categories": [
+          "computers"
+        ],
+        "window_hours": 24
+      },
+      "roles": {
+        "reviewer": {
+          "model": "gpt-5.6-luna",
+          "reasoning_effort": "xhigh"
+        },
+        "valuator": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high"
+        }
+      },
+      "economics": {
+        "country": "DE",
+        "currency": "EUR",
+        "minimum_profit_eur": "20",
+        "sold_max_age_days": 180
+      },
+      "budget": {
+        "max_cases": null,
+        "reviewer_job_limit": null,
+        "preparation_minutes": 30
+      },
+      "capabilities": {
+        "notes": []
+      }
+    },
+    "preparation_deadline": "2026-09-12T12:30:00+00:00",
+    "budget_semantics": "Limits new selected cases and reviewer job preparation only. One valuation job per selected case remains available after preparation closes. No token/cost/runtime enforcement; existing jobs, dispatch reconciliation and closeout remain available."
+  },
+  "queue_schema": [
+    "CREATE TABLE cases (run TEXT, listing_id TEXT, stage TEXT NOT NULL, data TEXT NOT NULL,\n        PRIMARY KEY(run,listing_id))",
+    "CREATE TABLE claims (listing_id TEXT PRIMARY KEY, run TEXT NOT NULL)",
+    "CREATE TABLE events (id INTEGER PRIMARY KEY, run TEXT, listing_id TEXT, at TEXT, action TEXT, data TEXT)",
+    "CREATE TABLE imports (run TEXT, digest TEXT, summary TEXT NOT NULL, PRIMARY KEY(run,digest))",
+    "CREATE TABLE runs (run TEXT PRIMARY KEY, manifest TEXT NOT NULL, locked INTEGER DEFAULT 0)",
+    "CREATE TABLE seen (listing_id TEXT PRIMARY KEY, first_run TEXT NOT NULL)",
+    "CREATE TABLE sightings (run TEXT, digest TEXT, ordinal INTEGER, listing_id TEXT, status TEXT,\n        seen_before INTEGER, row_json TEXT NOT NULL, PRIMARY KEY(run,digest,ordinal))",
+    "CREATE TABLE triage (run TEXT, listing_id TEXT, disposition TEXT, reason TEXT,\n        PRIMARY KEY(run,listing_id))"
+  ]
+}

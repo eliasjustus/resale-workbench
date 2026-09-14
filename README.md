@@ -1,5 +1,11 @@
 # Resale Workbench
 
+For repository research and independent investigation, start with the
+[researcher orientation](https://github.com/eliasjustus/resale-workbench/blob/main/private/RESEARCHER-START.md)
+and [published research reports](https://github.com/eliasjustus/resale-workbench/tree/main/private/research/2026-09-14).
+These selected report derivatives are public repository context, excluded from
+software packages; the folder name `private` does not restrict access.
+
 A local tool for collecting and reviewing resale evidence. It keeps observations, transaction evidence, estimates, unknowns and human decisions separate. The included economic checks support Germany/EUR; the optional marketplace collector supports Kleinanzeigen.
 
 The software can run an offline demonstration and a manual review without an account, model subscription or browser. Agent preparation and valuation are manually coordinated. Live access depends on source permission and your environment. Passing checks does not establish that a sale happened, a repair is feasible or an opportunity will be profitable.

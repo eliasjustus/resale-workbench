@@ -15,6 +15,45 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def expected_runtime_files():
+    """Derive expectations from declared source packages, never from wheel contents."""
+    config = tomllib.loads((ROOT / 'pyproject.toml').read_text(encoding='utf-8'))['tool']['setuptools']
+    expected = {}
+    for package in config['packages']:
+        folder = ROOT.joinpath(*package.split('.'))
+        for path in folder.glob('*.py'):
+            expected[path.relative_to(ROOT).as_posix()] = None
+    for package, patterns in config.get('package-data', {}).items():
+        folder = ROOT.joinpath(*package.split('.'))
+        for pattern in patterns:
+            matches = [path for path in folder.glob(pattern) if path.is_file()]
+            if not matches:
+                raise AssertionError(f'Declared package resource is missing: {package}/{pattern}')
+            for path in matches:
+                expected[path.relative_to(ROOT).as_posix()] = path.read_bytes().hex()
+    return expected
+
+
+INSTALLED_RUNTIME_PROBE = '''
+from importlib import import_module
+from pathlib import Path
+import json
+import sys
+installed = Path(sys.argv[1]).resolve()
+for relative, resource_hex in json.loads(Path(sys.argv[2]).read_text(encoding='utf-8')).items():
+    path = installed / relative
+    assert path.is_file(), 'Missing installed runtime file: ' + relative
+    if resource_hex is not None:
+        assert path.read_bytes().hex() == resource_hex, 'Changed installed resource: ' + relative
+    elif relative.endswith('.py'):
+        module = relative[:-3].replace('/', '.')
+        if module.endswith('.__init__'):
+            module = module[:-9]
+        loaded = import_module(module)
+        assert Path(loaded.__file__).resolve() == path.resolve(), 'Import escaped installation: ' + module
+'''
+
+
 class DistributionTests(unittest.TestCase):
     def artifacts(self):
         project = tomllib.loads((ROOT / 'pyproject.toml').read_text(encoding='utf-8'))['project']
@@ -27,7 +66,7 @@ class DistributionTests(unittest.TestCase):
 
     def test_archives_only_contain_explicit_source_packages_and_metadata(self):
         wheel, source = self.artifacts()
-        package_roots = {'collector', 'evaluation', 'pilot', 'resale_tool'}
+        package_roots = {'collector', 'evaluation', 'pilot', 'resale_tool', 'operations'}
         with zipfile.ZipFile(wheel) as archive:
             names = archive.namelist()
         for name in names:
@@ -43,7 +82,7 @@ class DistributionTests(unittest.TestCase):
                                       'AGENTS.md', 'CLAUDE.md', 'PROJECT.md', 'DAILY.md', 'RUNNER.md',
                                       'SPECIALISTS.md', 'REVIEWER.md', 'VALUATOR.md', 'PRIVACY.md',
                                       'PUBLISHING.md', 'CONTRIBUTING.md', 'LICENSE', 'SECURITY.md',
-                                      'CHANGELOG.md', '.gitignore'}
+                                      'CHANGELOG.md', '.gitignore', 'OPERATIONS.md'}
         for parts in source_names:
             self.assertTrue(parts[0] in permitted or parts[0].endswith('.egg-info'), '/'.join(parts))
             self.assertNotIn('__pycache__', parts)
@@ -84,7 +123,7 @@ class DistributionTests(unittest.TestCase):
                                      '--disable-pip-version-check', '--target', str(installed), str(wheel)],
                                     capture_output=True, text=True, cwd=root)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            env = dict(os.environ, PYTHONPATH=str(installed), PYTHONNOUSERSITE='1')
+            env = dict(os.environ, PYTHONPATH=str(installed), PYTHONNOUSERSITE='1', PYTHONDONTWRITEBYTECODE='1')
             scripts = list(installed.rglob('resale.exe' if os.name == 'nt' else 'resale'))
             self.assertEqual(len(scripts), 1, 'Installed console entry point is missing or ambiguous')
             entry = subprocess.run([str(scripts[0]), '--version'], cwd=root, env=env, capture_output=True, text=True)
@@ -100,6 +139,22 @@ class DistributionTests(unittest.TestCase):
             # Location assertions ensure checkout modules cannot mask a missing wheel file.
             location = run('-c', 'import resale_tool, pilot.queue; print(resale_tool.__file__); print(pilot.queue.__file__)')
             self.assertTrue(all(str(installed) in line for line in location.strip().splitlines()))
+            expected = root / 'expected-runtime.json'
+            expected.write_text(json.dumps(expected_runtime_files()), encoding='utf-8')
+            run('-c', INSTALLED_RUNTIME_PROBE, str(installed), str(expected))
+            run(str(ROOT / 'tests/test_operations_compatibility.py'), '-v')
+            # Prove that an incomplete installed wheel cannot fall back to a
+            # checkout/global copy and still satisfy the distribution check.
+            missing = installed / 'evaluation/service.py'
+            original = missing.read_bytes()
+            missing.unlink()
+            try:
+                rejected = subprocess.run([sys.executable, '-c', INSTALLED_RUNTIME_PROBE,
+                                           str(installed), str(expected)], cwd=root, env=env,
+                                          capture_output=True, text=True)
+                self.assertNotEqual(rejected.returncode, 0, 'Missing runtime file went unnoticed')
+            finally:
+                missing.write_bytes(original)
             for module in ('resale_tool', 'pilot', 'evaluation', 'evaluation.check_run_handoffs', 'collector', 'collector.discover'):
                 run('-m', module, '--help')
             run('-c', '''
